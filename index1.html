@@ -161,72 +161,51 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="strip text-center"><img src="images/skill.png" alt=" "/></div>
 		<div class="skill-grids">
 					<div class="col-md-2 skills-grid text-center">
-						<div class="circle circles-6" data-per="6" id="circles-1"></div>
+						<div class="circle" id="circles-1"></div>
 						<p>Robotic Process Automation</p>
 					</div>
 					<div class="col-md-2 skills-grid text-center">
-						<div class="circle circles-5" data-per="5" id="circles-2"></div>
+						<div class="circle" id="circles-2"></div>
 						<p>.NET Framework, SQL Server</p>
 					</div>
 					<div class="col-md-2 skills-grid text-center">
-						<div class="circle circles-3" data-per="3" id="circles-3"></div>
+						<div class="circle" id="circles-3"></div>
 						<p>Python, R</p>
 					</div>
 					<div class="col-md-2 skills-grid text-center">
-						<div class="circle circles-5" data-per="5" id="circles-4"></div>
+						<div class="circle" id="circles-4"></div>
 						<p>Leadership qualities</p>
 					</div>
 					<div class="col-md-2 skills-grid text-center">
-						<div class="circle circles-6" data-per="6" id="circles-5"></div>
+						<div class="circle" id="circles-5"></div>
 						<p>Communications</p>
 					</div>
 					<div class="col-md-2 skills-grid text-center">
-						<div class="circle circles-5" data-per="5" id="circles-6"></div>
+						<div class="circle" id="circles-6"></div>
 						<p>Business Analyst</p>
 					</div>
 					<div class="clearfix"> </div>
 				 <script type="text/javascript" src="js/circles.js"></script>
 					         <script>
-								 $("document").ready(function(){
-									var colors = [
+								var colors = [
 										['#6ed4c0', '#ffffff'], ['#6ed4c0', '#ffffff'], ['#6ed4c0', '#ffffff'], ['#6ed4c0', '#ffffff'], ['#6ed4c0', '#ffffff'], ['#6ed4c0', '#ffffff']
 									];
-									var arrCirclePer = [6, 6, 5, 3, 5, 6, 5];
 
-									for (var index = 1; index <= 7 ; index++) {
-										var i = arrCirclePer[index];
+
+								for (var i = 1; i <= 6; i++) {
+									var child = document.getElementById('circles-' + i),
+										percentage = 30 + (i * 10);
 										
-										var child = document.getElementById('circles-' + index),
-											percentage = 30 + (i * 10);
-										Circles.create({
-											id:         child.id,
-											percentage: percentage,
-											radius:     80,
-											width:      10,
-											number:   	percentage / 1,
-											text:       '%',
-											colors:     colors[i - 1]
-										});
-									}
-
-								 });
-								
-
-
-								// for (var i = 1; i <= 6; i++) {
-								// 	var child = document.getElementById('circles-' + i),
-								// 		percentage = 30 + (i * 10);
-										
-								// 	Circles.create({
-								// 		id:         child.id,
-								// 		percentage: percentage,
-								// 		radius:     80,
-								// 		width:      10,
-								// 		number:   	percentage / 1,
-								// 		text:       '%',
-								// 		colors:     colors[i - 1]
-								// 	});
-								// }
+									Circles.create({
+										id:         child.id,
+										percentage: percentage,
+										radius:     80,
+										width:      10,
+										number:   	percentage / 1,
+										text:       '%',
+										colors:     colors[i - 1]
+									});
+								}
 						
 				</script>
 		</div>
